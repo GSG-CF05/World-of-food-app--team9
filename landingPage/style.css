@@ -145,7 +145,7 @@ h2 span {
   height: 100%;
   color: #eeeeee;
   margin: auto;
-  background-image: url('./makarony-bliudo-lapsha-temnyi-fon-eda-pomidory-skovoroda.jpg');
+  background-image: url('../assets/makarony-bliudo-lapsha-temnyi-fon-eda-pomidory-skovoroda.jpg');
 
   animation-name: slide;
   animation-duration: 20s;
