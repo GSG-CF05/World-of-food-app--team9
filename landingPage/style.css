@@ -1,0 +1,179 @@
+@import url('../assets/reset.css');
+
+/* header style begien  */
+
+:root {
+  --header: #d6860d;
+  font-size: 16px;
+}
+header {
+  position: relative;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--header);
+}
+.logo {
+  position: absolute;
+  left: 0.5rem;
+  right: 0;
+  top: 1.1rem;
+  bottom: 0;
+  width: 6rem;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+  background-color: var(--header);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 1px;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  background-color: #af751d;
+}
+.dropdown-content a i {
+  color: black;
+}
+/* header style end  */
+
+/* main section style begein  */
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.title {
+  width: 100%;
+  padding: 2.2rem;
+  justify-content: center;
+}
+.title h1 {
+  font-size: 32px;
+  font-weight: 700px;
+  padding: 1.5rem;
+}
+.title p {
+  font-size: 18px;
+  padding: 1.5rem;
+}
+.local-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.local-form #firstname,
+#lastname {
+  width: 8.2rem;
+  padding: 0.7rem;
+  margin: 1rem 0.3rem;
+}
+.local-form #email {
+  width: 19rem;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+}
+.local-form input {
+  border-radius: 0.5rem;
+}
+.local-form button {
+  width: 20rem;
+  border-radius: 1rem;
+  padding: 0.85rem;
+  background-color: var(--header);
+}
+.local-form button:hover {
+  background-color: #ff3d00;
+}
+
+h2 {
+  color: rgb(252, 244, 244);
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 2.5px solid #f1f1f1;
+  line-height: 0.1rem;
+  margin: 1rem 4rem;
+}
+
+h2 span {
+  background: rgb(14, 13, 13);
+  padding: 0 10px;
+}
+.login {
+  width: 100%;
+  margin-top: 1rem;
+}
+.google-form {
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom: 7rem;
+}
+.google-form img {
+  width: 5rem;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  color: #eeeeee;
+  margin: auto;
+  background-image: url('../assets/makarony-bliudo-lapsha-temnyi-fon-eda-pomidory-skovoroda.jpg');
+
+  animation-name: slide;
+  animation-duration: 20s;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+@keyframes slide {
+  0% {
+    background-position: 0 0;
+  }
+  16.66% {
+    background-position: 0 0;
+  }
+  33.32% {
+    background-position: -400px 0;
+  }
+  49.98% {
+    background-position: -400px 0;
+  }
+  66.64% {
+    background-position: -500px 0;
+  }
+  83.30% {
+    background-position: -500px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+/* main section style end  */

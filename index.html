@@ -4,9 +4,89 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="./landingPage/style.css" />
 
-    <title>landingPage</title>
+    <title>World's Food</title>
   </head>
-  <body></body>
+  <body>
+    <!-- header begain  -->
+    <header>
+      <!-- image tag for -->
+      <a href="./index.html"
+        ><img class="logo" src="./assets/logo.png" alt="logo"
+      /></a>
+
+      <!-- dropdown list -->
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa fa-bars" style="font-size: 32px"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#"><i class="fa fa-home">Home</i> </a>
+          <a href="#">
+            <i class="fa fa-heart" aria-hidden="false">Wish Food</i></a
+          >
+          <a href="#"><i class="fa fa-book" aria-hidden="true">About us</i></a>
+        </div>
+      </div>
+    </header>
+    <!-- header end -->
+
+    <!-- main body begain  -->
+    <main class="main" id="main">
+      <!-- descrip the app servicies  -->
+      <div class="title">
+        <h1>World Of Food</h1>
+        <p>Best Food Ever & Recipe praperation</p>
+      </div>
+      <!-- registraion form  -->
+      <div class="local-form">
+        <form class="form" id="form" action="#">
+          <div class="name">
+            <input
+              type="text"
+              placeholder="First Name"
+              name="firstname"
+              id="firstname"
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              name="lastname"
+              id="lastname"
+            />
+          </div>
+          <div class="email">
+            <input
+              type="email"
+              placeholder="Email Adress"
+              name="email"
+              id="email"
+            />
+          </div>
+
+          <button type="submit" class="submit-btn">Rigister Now</button>
+        </form>
+      </div>
+
+      <!-- dividing line  -->
+      <h2><span>OR</span></h2>
+
+      <!-- regestration by google  -->
+
+      <!-- google login -->
+      <div class="login">
+        <h3>Login By</h3>
+      </div>
+      <!-- google login anchor begin -->
+      <div class="google-form">
+        <a href="#"> <img src="./assets/google.png" alt="google.png" /></a>
+      </div>
+    </main>
+    <!-- main body end  -->
+  </body>
 </html>
