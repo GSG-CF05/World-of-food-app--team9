@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Menu</title>
     <!-- css link -->
-    <link rel="stylesheet" href="menu.css" />
+    <link rel="stylesheet" href="./menu.css" />
     <!-- font awesome link -->
     <link
       rel="stylesheet"
@@ -16,8 +16,8 @@
   <body>
     <header>
           <!-- image tag for -->
-          <a href="../index.html"><img class="logo" src="../assets/logo.png" alt="logo"/></a>
-    
+          <a href="#"><img class="logo" src="./../assets/logo.png" alt="logo"/></a>
+          <input type="text" class="search-input" onkeyup="search(this.value)" placeholder="search">
           <!-- dropdown list -->
           <div class="dropdown">
             <button class="dropbtn">
@@ -25,19 +25,16 @@
             </button>
             <div class="dropdown-content">
               <a href="#"><i class="fa fa-home">Home</i> </a>
-              <a href="#">
+              <a href="">
                 <i class="fa fa-heart" aria-hidden="false">Wish Food</i></a
               >
               <a href="#"><i class="fa fa-book" aria-hidden="true">About us</i></a>
             </div>
           </div>
-        </header>
+  </header>
     <section class="slider-countries" >
       <div class="countries-list" id="container-countries">
-           <a class="active-country country-item" onclick="filterCountry(this.textContent)">All</a>
-           <a class="country-item">Palestine</a>
-           <a class="country-item">Egypt</a>
-           <a class="country-item">Jordan</a>
+           <a href = "menu.html"class="active-country country-item" onclick="filterCountry(this.textContent)">All</a>
       </div>
       <div class="arrows">
         <i class="fa-solid fa-arrow-left" id="back"></i>
@@ -46,32 +43,7 @@
 
     </section>
     <section class="all-food">
-      
-      <div class="food-item left-to-right-ef">
-        <div class="food-icons">
-          <i class="fa-brands fa-youtube"></i>
-          <i class="fa-solid fa-heart"></i>
-        </div>
-        <figure class="food-img">
-          <img src="https://www.themealdb.com/images/media/meals/58oia61564916529.jpg" alt="Food" />
-        </figure>
-        <div class="food-info">
-          <h3 class="food-name">Pizza<sub>Palestine</sub></h3>
-          <p class="food-desc">
-            is a dish of Italian origin consisting of a usually round, flat base
-            of leavened wheat-based dough
-          </p>
-          <div class="food-more-info">
-            <a href="#" class="food-link">Check more information</a>
-            <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-
-        </div>
-      </div>
-
     </section>
-
-
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
