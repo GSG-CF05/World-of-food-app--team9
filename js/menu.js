@@ -88,7 +88,7 @@ function addCountry(country) {
 }
 
 // all food api
-fetch("./food.json")
+fetch("./../assets/food.json")
   .then((response) => {
     return response.json();
   })
@@ -128,7 +128,7 @@ back.onclick = function () {
 
 // filter meals according to their country
 function filterCountry(country) {
-  let myReq = new Request("./food.json");
+  let myReq = new Request("./../assets/food.json");
   fetch(myReq)
     .then((response) => {
       return response.json();
@@ -155,7 +155,7 @@ function filterCountry(country) {
 let searchInput =document.querySelector('.search-input');
 function search(value){
   let activeCountry = document.querySelector('.active-country')
-  fetch("./food.json")
+  fetch("./../assets/food.json")
   .then((response) => {
     return response.json();
   })
