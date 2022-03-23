@@ -15,35 +15,43 @@
   </head>
   <body>
     <header>
-          <!-- image tag for -->
-          <a href="#"><img class="logo" src="./../assets/logo.png" alt="logo"/></a>
-          <input type="text" class="search-input" onkeyup="search(this.value)" placeholder="search">
-          <!-- dropdown list -->
-          <div class="dropdown">
-            <button class="dropbtn">
-              <i class="fa fa-bars" style="font-size: 32px"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="#"><i class="fa fa-home">Home</i> </a>
-              <a href="">
-                <i class="fa fa-heart" aria-hidden="false">Wish Food</i></a
-              >
-              <a href="#"><i class="fa fa-book" aria-hidden="true">About us</i></a>
-            </div>
-          </div>
-  </header>
-    <section class="slider-countries" >
+      <!-- image tag for -->
+      <a href="#"><img class="logo" src="./../assets/logo.png" alt="logo" /></a>
+      <input
+        type="text"
+        class="search-input"
+        onkeyup="search(this.value)"
+        placeholder="search"
+      />
+      <!-- dropdown list -->
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa fa-bars" style="font-size: 32px"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#"><i class="fa fa-home">Home</i> </a>
+          <a href="">
+            <i class="fa fa-heart" aria-hidden="false">Wish Food</i></a
+          >
+          <a href="#"><i class="fa fa-book" aria-hidden="true">About us</i></a>
+        </div>
+      </div>
+    </header>
+    <section class="slider-countries">
       <div class="countries-list" id="container-countries">
-           <a href = "menu.html"class="active-country country-item" onclick="filterCountry(this.textContent)">All</a>
+        <a
+          href="menu.html"
+          class="active-country country-item"
+          onclick="filterCountry(this.textContent)"
+          >All</a
+        >
       </div>
       <div class="arrows">
         <i class="fa-solid fa-arrow-left" id="back"></i>
         <i class="fa-solid fa-arrow-right" id="next"></i>
       </div>
-
     </section>
-    <section class="all-food">
-    </section>
-    <script src="./script.js"></script>
+    <section class="all-food"></section>
+    <script src="./../js/menu.js"></script>
   </body>
 </html>
