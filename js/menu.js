@@ -1,6 +1,7 @@
 // get important nodes
 let allFood = document.querySelector('.all-food');
 let countriesList = document.querySelector('.countries-list');
+let searchInput = document.querySelector('.search-input');
 
 //pagination variabls
 let numberOfitems = 0;
@@ -160,10 +161,10 @@ function filterCountry(country) {
     x.classList.remove('active-country');
   });
   country.classList.add('active-country');
+  searchInput.value = '';
 }
 
 // search by name :
-let searchInput = document.querySelector('.search-input');
 function search(value) {
   let activeCountry = document.querySelector('.active-country');
   fetch('./../assets/food.json')
@@ -224,6 +225,7 @@ function paginationButton(page, items) {
     let current_btn = document.querySelector('.pagenumbers button.active');
     current_btn.classList.remove('active');
     button.classList.add('active');
+    searchInput.value = '';
   });
 
   return button;
