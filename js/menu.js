@@ -2,6 +2,12 @@
 let allFood = document.querySelector('.all-food');
 let countriesList = document.querySelector('.countries-list');
 let searchInput = document.querySelector('.search-input');
+if (window.localStorage.getItem('wishlist')) {
+  var wishlist_list = window.localStorage.getItem('wishlist');
+  wishlist_list = JSON.parse(wishlist_list);
+} else {
+  var wishlist_list = [];
+}
 
 //pagination variabls
 let numberOfitems = 0;
@@ -15,6 +21,7 @@ function addFood(info) {
   let foodItem = document.createElement('div');
   foodItem.classList.add('food-item');
   foodItem.classList.add('left-to-right-ef');
+  foodItem.setAttribute('id', info['idMeal']);
 
   let foodImage = document.createElement('div');
   foodImage.classList.add('food-img');
@@ -45,6 +52,19 @@ function addFood(info) {
   let heartIcon = document.createElement('i');
   heartIcon.classList.add('fa-solid');
   heartIcon.classList.add('fa-heart');
+
+  //check the element if in wish list
+  wishlist_list.forEach((element) => {
+    if (info['idMeal'] == element) {
+      heartIcon.classList.add('favMeal');
+    }
+  });
+
+  //make the heart icon orange if added in wishlist
+  heartIcon.addEventListener('click', function () {
+    let meal_id = heartIcon.closest('.food-item').id;
+    toggle(meal_id, heartIcon);
+  });
 
   foodIcons.appendChild(youtubeLink);
   foodIcons.appendChild(heartIcon);
@@ -100,9 +120,7 @@ fetch('./../assets/food.json')
     return response.json();
   })
   .then((data) => {
-    // for (let i = 0; i < 24; i++) {
-    //   addFood(data.meals[i]);
-    // }
+
     displayList(data.meals, list_element, n_meals, current_page);
     setUpPagination(data.meals, pagination_element, n_meals);
   });
@@ -142,13 +160,9 @@ function filterCountry(country) {
     })
     .then((jsondata) => {
       let meals = jsondata.meals;
-      // allFood.innerHTML = '';
       countryMeals = meals.filter(
         (item) => item.strArea == country.textContent
       );
-      // for (let i = 0; i < countryMeals.length; i++) {
-      //   addFood(countryMeals[i]);
-      // }
       let paginationContainer = document.querySelector('.pagenumbers');
       paginationContainer.innerHTML = '';
       displayList(countryMeals, list_element, n_meals, current_page);
@@ -229,4 +243,42 @@ function paginationButton(page, items) {
   });
 
   return button;
+}
+
+//wishlist functionality
+function toggle(item, like) {
+  if (!wishlist_list) {
+    addToWish(item, like);
+  } else if (wishlist_list.includes(item)) {
+    removeFromWish(item, like);
+  } else {
+    addToWish(item, like);
+  }
+}
+//function add to wish list
+function addToWish(item, like) {
+  if (typeof wishlist_list == 'string') {
+    wishlist_list = JSON.parse(wishlist_list);
+  } else if (!Array.isArray(wishlist_list)) {
+    wishlist_list = [];
+  }
+  wishlist_list.push(item);
+  window.localStorage.setItem('wishlist', JSON.stringify(wishlist_list));
+  like.classList.add('favMeal');
+}
+//function remove form with list
+function removeFromWish(item, like) {
+  let wishlist_items = localStorage.getItem('wishlist');
+
+  let i = 0;
+  wishlist_items = JSON.parse(wishlist_items);
+  wishlist_items.forEach((element) => {
+    if (element == item) {
+      wishlist_items.splice(i, 1);
+    }
+    i++;
+  });
+  localStorage.setItem('wishlist', JSON.stringify(wishlist_items));
+  wishlist_list = wishlist_items;
+  like.classList.remove('favMeal');
 }
