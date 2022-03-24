@@ -2,6 +2,8 @@
 let allFood = document.querySelector('.all-food');
 let countriesList = document.querySelector('.countries-list');
 let searchInput = document.querySelector('.search-input');
+let username = window.localStorage.getItem('user');
+user = JSON.parse(username);
 if (window.localStorage.getItem('wishlist')) {
   var wishlist_list = window.localStorage.getItem('wishlist');
   wishlist_list = JSON.parse(wishlist_list);
@@ -120,7 +122,6 @@ fetch('./../assets/food.json')
     return response.json();
   })
   .then((data) => {
-
     displayList(data.meals, list_element, n_meals, current_page);
     setUpPagination(data.meals, pagination_element, n_meals);
   });
@@ -282,3 +283,10 @@ function removeFromWish(item, like) {
   wishlist_list = wishlist_items;
   like.classList.remove('favMeal');
 }
+// function addUserName(name) {
+//   console.log(name);
+//   let nameEle = document.querySelector('.bars-icon');
+//   console.log(nameEle);
+//   nameEle.innerText(`${name}`);
+// }
+// addUserName(user['username']);
