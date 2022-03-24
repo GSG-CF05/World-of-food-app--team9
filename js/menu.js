@@ -88,11 +88,19 @@ function addFood(info) {
 
   let showDetails = document.createElement('a');
   showDetails.textContent = 'Show details';
-  showDetails.href = '#';
+  showDetails.href = '../details/details.html';
   showDetails.classList.add('food-link');
+  showDetails.addEventListener('click', function () {
+    let meal_id = showDetails.closest('.food-item').id;
+    addIdMealToLocalStorage(meal_id);
+  });
 
   let arrowLink = document.createElement('a');
-  arrowLink.href = '#';
+  arrowLink.href = '../details/details.html';
+  arrowLink.addEventListener('click', function () {
+    let meal_id = arrowLink.closest('.food-item').id;
+    addIdMealToLocalStorage(meal_id);
+  });
 
   let arrowIcon = document.createElement('i');
   arrowIcon.classList.add('fa-solid');
@@ -290,3 +298,7 @@ function removeFromWish(item, like) {
 //   nameEle.innerText(`${name}`);
 // }
 // addUserName(user['username']);
+//for save the meal id in local storage for show meal details
+function addIdMealToLocalStorage(id) {
+  window.localStorage.setItem('meal_id_details', JSON.stringify(id));
+}

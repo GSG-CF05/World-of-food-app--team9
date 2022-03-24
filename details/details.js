@@ -1,14 +1,15 @@
 let app = document.querySelector('#root');
 let idMeal = window.localStorage.getItem('meal_id_details');
+idMeal = JSON.parse(idMeal);
 
 //Add container
 let container = document.createElement('div');
 container.setAttribute('class', 'container');
 app.appendChild(container);
 
-const params = new Proxy(new URLSearchParams(window.location.search), {
-  get: (searchParams, prop) => searchParams.get(prop),
-});
+// const params = new Proxy(new URLSearchParams(window.location.search), {
+//   get: (searchParams, prop) => searchParams.get(prop),
+// });
 
 let id = params.id; // "some_value"
 fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`) // API adress
