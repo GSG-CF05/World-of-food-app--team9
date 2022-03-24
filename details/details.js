@@ -11,7 +11,7 @@ app.appendChild(container);
 //   get: (searchParams, prop) => searchParams.get(prop),
 // });
 
-let id = params.id; // "some_value"
+// "some_value"
 fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`) // API adress
   // Obtaining data from API
   .then((res) => {
