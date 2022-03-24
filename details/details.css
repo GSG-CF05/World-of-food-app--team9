@@ -67,26 +67,15 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 body{
     background-color: #251d1d ;
     color: white;
 }
+
 main{
     padding: 0 10px;
 }
 
-nav {
-     padding: 1.5rem 3.5rem;
-     background-color: #d6860d;
-     width: 100%;
-     padding: 1.5rem 3.5rem;
-     top: 0;
-     left: 0;
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-   }
 
  .image-card img {
      height: 100%;
@@ -97,7 +86,7 @@ nav {
  }
 
  .par-img{
-     background-image: url("https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+     /* background-image: url("https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"); */
      min-height: 500px;
 
      /*parallax scrolling effect */
@@ -116,23 +105,23 @@ nav {
   }
 
  .card {
-   width: 100px;
+   width: 160px;
    padding: 1em;
    border-radius: 15px;  
    margin: 7px;
    background: #251d1d;
    color: white;
    text-align: center;
+   
  }
 
  .card-img-top {
     width: 100%;
-    height: 3vw;
     object-fit: cover;
     border-radius: 20%;
 }
 
-h1 h2 {
+h1, h2, h3 {
     padding: 1em;
     text-align:left;
     margin-left: 25px;
@@ -162,12 +151,11 @@ h1 h2 {
      width: 600px;
    }
 
-   div {
-    margin: 3px 14px 3px 14px;
-    column-gap: 50px;
-    padding: 1em; 
-}
-    
+   iframe {
+    width: 100%;
+    height: 300px;
+   }
+     
 @media only screen and (max-width: 600px)   {
 
     nav {
