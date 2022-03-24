@@ -13,7 +13,7 @@
   </head>
   <body>
     <header>
-      <a href="./index.html"
+      <a href="../index.html"
         ><img class="logo" src="../assets/logo.png" alt="logo"
       /></a>
       <!-- dropdown list -->
@@ -22,11 +22,15 @@
           <i class="fa fa-bars" style="font-size: 32px"></i>
         </button>
         <div class="dropdown-content">
-          <a href="../menuu/index.html"><i class="fa fa-home">Home</i> </a>
+          <a href="../menu/menu.html"><i class="fa fa-home">Home</i> </a>
           <a href="../wishlist/index.html">
             <i class="fa fa-heart" aria-hidden="false">Wish Food</i></a
           >
-          <a href="#"><i class="fa fa-book" aria-hidden="true">About us</i></a>
+          <a href="../index.html"
+            ><i class="fa fa-book" aria-hidden="true" onclick="logout()"
+              >logout</i
+            ></a
+          >
         </div>
       </div>
     </header>
@@ -35,5 +39,6 @@
       <section class="all-food"></section>
     </main>
     <script src="../js/wishlist.js"></script>
+    <script src="../js/app.js"></script>
   </body>
 </html>

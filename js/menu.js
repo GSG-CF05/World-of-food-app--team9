@@ -2,6 +2,8 @@
 let allFood = document.querySelector('.all-food');
 let countriesList = document.querySelector('.countries-list');
 let searchInput = document.querySelector('.search-input');
+let username = window.localStorage.getItem('user');
+user = JSON.parse(username);
 if (window.localStorage.getItem('wishlist')) {
   var wishlist_list = window.localStorage.getItem('wishlist');
   wishlist_list = JSON.parse(wishlist_list);
@@ -86,11 +88,19 @@ function addFood(info) {
 
   let showDetails = document.createElement('a');
   showDetails.textContent = 'Show details';
-  showDetails.href = '#';
+  showDetails.href = '../details/details.html';
   showDetails.classList.add('food-link');
+  showDetails.addEventListener('click', function () {
+    let meal_id = showDetails.closest('.food-item').id;
+    addIdMealToLocalStorage(meal_id);
+  });
 
   let arrowLink = document.createElement('a');
-  arrowLink.href = '#';
+  arrowLink.href = '../details/details.html';
+  arrowLink.addEventListener('click', function () {
+    let meal_id = arrowLink.closest('.food-item').id;
+    addIdMealToLocalStorage(meal_id);
+  });
 
   let arrowIcon = document.createElement('i');
   arrowIcon.classList.add('fa-solid');
@@ -120,7 +130,6 @@ fetch('./../assets/food.json')
     return response.json();
   })
   .then((data) => {
-
     displayList(data.meals, list_element, n_meals, current_page);
     setUpPagination(data.meals, pagination_element, n_meals);
   });
@@ -281,4 +290,15 @@ function removeFromWish(item, like) {
   localStorage.setItem('wishlist', JSON.stringify(wishlist_items));
   wishlist_list = wishlist_items;
   like.classList.remove('favMeal');
+}
+// function addUserName(name) {
+//   console.log(name);
+//   let nameEle = document.querySelector('.bars-icon');
+//   console.log(nameEle);
+//   nameEle.innerText(`${name}`);
+// }
+// addUserName(user['username']);
+//for save the meal id in local storage for show meal details
+function addIdMealToLocalStorage(id) {
+  window.localStorage.setItem('meal_id_details', JSON.stringify(id));
 }
