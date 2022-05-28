@@ -273,5 +273,5 @@ header {
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 .favMeal {
-  color: rgb(182, 100, 23) !important;
+  color: red !important;
 }
